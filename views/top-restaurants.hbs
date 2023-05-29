@@ -1,23 +1,23 @@
 {{> restaurant-tabs route='topRestaurants'}}
 <h1>Top 10 人氣餐廳</h1>
 <hr />
-<div class="row d-flex justify-content-center">
-  <div class="col-md-8">
+<div class="row">
+  <div class="col-md-8 m-auto">
     <div class="card-body">
       {{#each restaurants}}
       <div class="card mb-4 shadow-sm p-4">
-        <div class="d-flex align-items-center">
-          <div class="col-5">
+        <div class="row">
+          <div class="col-4">
             <a href="/restaurants/{{this.id}}">
               {{#if this.image}}
-              <img src="{{this.image}}" width="280px" height="280px" style="transition: opacity 0.5s; opacity:0;"
+              <img src="{{this.image}}" class="card-img-top img-fluid" width="286px" height="180px" style="transition: opacity 0.5s; opacity:0;"
                 onload="this.style.opacity=1;" />
               {{else}}
               <img src="https://fakeimg.pl/280/" width="280px" height="280px" />
               {{/if}}
             </a>
           </div>
-          <div class="col align-self-start">
+          <div class="col-8">
             <h4>
               <a class="link-dark text-decoration-none" href="/restaurants/{{this.id}}">{{this.name}}</a>
               <a class="link-secondary text-decoration-none" href="/restaurants?categoryId={{this.Category.id}}">
